@@ -69,6 +69,13 @@ let B7Validator = {
                             return `Campo deve ter no mínimo ${min} caracteres`;
                         }
                         break;
+                    case 'email':
+                        // Expressão regular simples para validar email
+                        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(input.value)) {
+                            return 'E-mail inválido';
+                        }
+                        break;    
                 }
             }
         }
